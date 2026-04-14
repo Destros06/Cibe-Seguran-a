@@ -1,0 +1,70 @@
+Comprehensive Study Guide: Ethical Hacking and Web Application Security
+
+This study guide synthesizes information regarding ethical hacking methodologies, web application vulnerabilities (SQL, NoSQL, and XSS), and modern defensive strategies, including deep learning approaches and organizational risk management.
+
+
+--------------------------------------------------------------------------------
+
+
+Part I: Short-Answer Quiz
+
+Instructions: Answer the following questions in 2–3 sentences based on the provided source context.
+
+1. How does the broad definition of a "Hacker" differ from the popular perception of the term? In popular culture, a hacker is often seen as a malicious individual intent on compromising data integrity and privacy. However, a broader definition includes any highly skilled individual who understands and modifies systems to contribute to software development or discover security information, regardless of intent.
+2. What are the five distinct phases of a cyberattack as followed by both ethical and malicious hackers? The process begins with Reconnaissance (information gathering) and Scanning (network analysis), followed by Gaining Access (exploitation). Once inside, the hacker moves to Maintaining Access (installing backdoors) and finally concludes with Covering Tracks (removing evidence like logs).
+3. Explain the difference between a "Vulnerability" and an "Exploit." A vulnerability is a flaw in software, design logic, or execution that can lead to an unexpected or harmful event within a system. An exploit is the specific piece of software or technology designed to take advantage of that vulnerability to gain unauthorized access or elevate privileges.
+4. How do "White Hat" hackers differ from "Black Hat" hackers in terms of motivation and legality? White Hat hackers, or ethical hackers, are motivated by the improvement of security systems and operate strictly within legal limits and contracts. Black Hat hackers, also known as crackers, are motivated by personal gain, challenges, or notoriety and operate maliciously and illegally.
+5. What is a "Pentest," and what are its primary objectives? A Pentest, or penetration test, is a set of simulated attacks against a system to audit its security mechanisms. Its goal is not to damage the target but to expose vulnerabilities and provide a detailed report on the potential implications and necessary countermeasures.
+6. In the context of MongoDB, what is "Operator Injection"? Operator injection occurs when an attacker submits NoSQL query operators, such as $ne (not equal) or $gt (greater than), through user input fields like JSON properties or URL parameters. This allows the attacker to manipulate the query logic, potentially bypassing authentication or exfiltrating data.
+7. How does "Timing-based injection" work when database errors are not visible in the application response? Timing-based injection uses JavaScript functions to trigger an intentional time delay (e.g., using a sleep or while loop) if a specific condition is met, such as a password starting with a certain letter. By measuring the response time, an attacker can confirm the truth of the condition even without direct output from the database.
+8. According to the ANBIMA 2025 Guide, what are the five essential functions of a cybersecurity program? A program must include Identification and Risk Assessment, Actions for Prevention and Protection, and Control, Monitoring, and Testing. Additionally, it must feature a robust Response Plan and a comprehensive Governance/Management strategy to ensure continuous improvement.
+9. What are "Payloads" in the context of the Metasploit Framework? Payloads are the specific codes or scripts that run on a target system after an exploit has successfully opened a breach. They perform the intended action of the hacker, such as providing a remote shell (Meterpreter) or executing specific commands.
+10. Why is a hybrid CNN-LSTM model considered effective for detecting SQLi and XSS attacks? This hybrid approach combines the strengths of Convolutional Neural Networks (CNNs) in extracting spatial features from input data with Long Short-Term Memory (LSTM) networks' ability to capture temporal dependencies in sequential data. This allows the model to identify subtle, complex patterns in malicious payloads that traditional methods might miss.
+
+
+--------------------------------------------------------------------------------
+
+
+Part II: Essay Questions
+
+Instructions: Use the provided sources to develop comprehensive responses for the following topics. (Note: Answers are not provided for this section).
+
+1. The Ethics of Intrusion: Analyze the legal and moral requirements a professional must fulfill to be classified as an "Ethical Hacker." Discuss the importance of contracts, non-disclosure agreements, and the defined limits of a security audit.
+2. Comparative Analysis of Web Vulnerabilities: Compare and contrast SQL Injection (SQLi) and NoSQL Injection. Discuss how their underlying database structures (relational vs. non-relational) influence the types of attacks, such as syntax vs. operator injection.
+3. The Lifecycle of an Attack: Detail the transition from the "Reconnaissance" phase to the "Gaining Access" phase. How does the information gathered in the early stages (footprinting) directly inform the choice of exploits used during the attack?
+4. Deep Learning in Cybersecurity: Evaluate the role of data preprocessing (decoding, standardization, and tokenization) in training neural networks to detect cyberattacks. Why is standardizing SQL and XSS payloads necessary for high accuracy in detection models?
+5. Organizational Resilience: Discuss the importance of risk identification as the foundation of the ANBIMA cybersecurity framework. How does a thorough inventory of critical assets and vulnerabilities lead to a more effective incident response plan?
+
+
+--------------------------------------------------------------------------------
+
+
+Part III: Glossary of Key Terms
+
+Term	Definition
+Authentication Hijacking	The theft of a web session from a user who has already been authenticated.
+Backdoor	A method (often a hidden script or program) used by a hacker to maintain exclusive, easy access to a compromised system for future use.
+Black-Box Testing	A type of pentest performed without any prior knowledge of the target's internal infrastructure or systems.
+Clickjacking	An attack that tricks a user into clicking a link or button that performs an action they did not intend, such as a purchase.
+CNN (Convolutional Neural Network)	A deep learning model that uses filters (kernels) to extract features from input data, often used in image and text classification.
+Cookie Poisoning	The modification or corruption of cookies stored on a user's device to gain unauthorized access.
+DDoS (Distributed Denial of Service)	A large-scale attack using many infected devices (zombies/bots) to overwhelm a target service with traffic, making it unavailable to legitimate users.
+DOM-based XSS	A cross-site scripting attack where the malicious script is executed by the browser as a result of modifying the Document Object Model (DOM).
+Exploit	A piece of code or software that takes advantage of a specific bug or vulnerability to violate system security.
+Footprinting	The process of creating a profile or "image" of a target during the reconnaissance phase.
+Grey-Box Testing	A pentest where the attacker has partial knowledge of the internal network, simulating an attack by a malicious insider.
+Honeypot	A false target or decoy system designed to attract and distract hackers, thereby protecting the real, valuable assets.
+Information Gathering	The passive or active collection of data about a target system, including IP ranges, server types, and social media data.
+Inside Attack	An attack originating from within the security perimeter of an organization, usually by an individual with privileged access.
+LGPD (Lei Geral de Proteção de Dados)	The Brazilian General Data Protection Law, which regulates the processing of personal data to protect privacy.
+LSTM (Long Short-Term Memory)	A type of Recurrent Neural Network (RNN) capable of learning long-term dependencies in sequential data, useful for analyzing code strings.
+Malware	A general term for malicious software (viruses, worms, trojans, etc.) designed to infiltrate or damage a computer system.
+Meterpreter	An advanced payload within Metasploit that provides a powerful, interactive command-line interface on the compromised target.
+NoSQL Injection	A vulnerability where an attacker interferes with queries made to non-relational databases (like MongoDB) by injecting malicious syntax or operators.
+Phishing	A social engineering technique using deceptive messages (email, SMS) to trick users into revealing sensitive information like login credentials.
+Rootkit	A set of software tools used to hide the presence of a hacker and their activities within a compromised system, often by modifying system logs.
+Sniffing	The act of capturing and analyzing network traffic to find sensitive information such as passwords or account numbers.
+SQL Injection (SQLi)	An attack that inserts malicious SQL code into input fields to manipulate a back-end database, potentially stealing or destroying data.
+Staging	In Metasploit, the use of small payloads (stagers) to establish a connection that then downloads a larger, more functional payload.
+White-Box Testing	A pentest where the tester has full knowledge of the target's infrastructure, mimicking the access of a network administrator.
+XSS (Cross-Site Scripting)	A vulnerability where malicious scripts are injected into web pages viewed by other users, often used to steal session IDs or cookies.
