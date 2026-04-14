@@ -1,0 +1,127 @@
+Manual of Basic Procedures: The Five Phases of Ethical Hacking
+
+1. Introduction: The Ethical Hacker’s Philosophy
+
+In the common imagination, a "hacker" is a shadowy figure lurking in a hoodie, seeking to destroy. To the professional auditor, however, hacking is a craft of deep curiosity—the art of improving technology through a profound understanding of its internal mechanics. While a malicious actor seeks to shatter the CIA Triad (Confidentiality, Integrity, and Availability), the ethical hacker seeks to reinforce it.
+
+Think of the difference as that between a burglar and a locksmith. Both know how to bypass a lock. The burglar does so to steal your valuables and vanish into the night; the locksmith does so to show you where your deadbolt is weak, helping you secure your home before the burglar arrives. This is the "Hacker Ethic": a commitment to the sharing of security information to build a more resilient digital world.
+
+Feature	White Hat (Ethical Hacker)	Black Hat (Malicious Attacker)
+Motivation	Improvement of security and defensive posture.	Financial gain, personal challenge, or notoriety.
+Legal Status	Operates with explicit, written authorization.	Operates illegally; often categorized as a "Cracker."
+CIA Impact	Protects the Confidentiality, Integrity, and Availability of data.	Compromises the Integrity, Availability, and Privacy of systems.
+Analogy	The Master Locksmith testing your home security.	The Burglar looking for an unlatched window.
+
+This protective mindset is executed through a structured, professional methodology known as a security audit or "Pentest."
+
+2. Core Terminology for the Aspiring Auditor
+
+Before we can secure a system, we must speak the language of the trade. Here are the four pillars of attack logic:
+
+1. Vulnerability: A flaw in software, logic design, or execution.
+  * So what? This is the "open window"—the fundamental weakness that makes an attack possible.
+2. Threat: An environment or situation that could lead to a potential security violation.
+  * So what? Threats are the "neighborhood" risks. Identifying them allows us to prioritize which windows need the strongest bars.
+3. Exploit: A piece of code or technology that takes advantage of a vulnerability to gain access.
+  * So what? The exploit is the bridge between a theoretical flaw and a realized impact. It is the specific tool used to climb through the open window.
+4. Malware: Malicious code (Trojans, Rootkits, etc.) designed to cause damage or steal data.
+  * So what? This is the "payload." Once the bridge (exploit) is crossed, malware is what the attacker leaves behind to maintain control or execute their goals.
+
+These concepts are the building blocks for our first stage: quiet, meticulous observation.
+
+3. Phase 1: Reconnaissance (Information Gathering)
+
+The objective here is to create a "footprint"—a detailed map of the target's digital existence. We distinguish between Passive Reconnaissance (Information Gathering), where we use Open Source Intelligence (OSINT) to watch without being seen, and Active Reconnaissance, which involves direct interaction with the target’s network. While active methods provide more technical depth, they carry a high risk of alerting the "guards."
+
+The Seven Steps of Professional Footprinting
+
+Following the established methodology, a hacker must methodically check off these seven steps to build a complete profile:
+
+* [ ] 1. Unearth initial information: Gathering public records, social media, and corporate data.
+* [ ] 2. Locate the network range: Identifying the IP boundaries owned by the target.
+* [ ] 3. Ascertain active machines: Finding which devices on the network are actually powered on.
+* [ ] 4. Find open ports and access points: Locating the "doors" to the network.
+* [ ] 5. Detect the Operating System (OS): Determining if the target runs Windows, Linux, or Unix.
+* [ ] 6. Uncover services on ports: Identifying the specific software (web servers, databases) running.
+* [ ] 7. Map the network: Visualizing the topology and connection points.
+
+This information allows the auditor to move from general observation to tactical probing.
+
+4. Phase 2: Scanning (Probing the Perimeter)
+
+If Reconnaissance is looking at a house from the street, Scanning is knocking on every window of a dark house to see which ones are unlatched. This is the transition to technical probing, where we use tools like Ping sweeps, ICMP/SNMP scanners, and network mappers to build a "Tactical Map" of the perimeter.
+
+We focus on three scanning types:
+
+* Port Scanning: Determining which digital doors (ports) are listening and available.
+* Network Scanning: Identifying the specific IP addresses active within a subnetwork.
+* Vulnerability Scanning: Probing the system for known software flaws that haven't been patched.
+
+Key Outcomes of the Scanning Phase:
+
+* Identification of specific OS types and versions.
+* Discovery of active services and software versions.
+* Mapping of user accounts and internal computer names.
+* Detection of known software flaws (CVEs) ready for exploitation.
+
+Once a vulnerability is "seen," we move from looking to "touching."
+
+5. Phase 3: Gaining Access (Exploitation)
+
+This is the "invasion" phase. We now use the bridge (the exploit) to cross into the system. In the modern landscape, web application logic is a primary target. We focus on two critical attack logics:
+
+1. SQL Injection (SQLi): The logic here is tricking the database into executing code instead of processing data. By inserting malicious commands into input fields, the attacker manipulates the back-end database directly.
+2. Cross-Site Scripting (XSS): The logic here is leveraging the trust a browser has in a website to execute malicious scripts on the user's end. This allows attackers to steal session IDs or redirect browsers to malicious sites.
+
+Comparison of Web Attacks
+
+Attack Type	Primary Goal	Target	Common Prevention
+SQL Injection	Access, edit, or delete database records.	The Back-end Database.	Parameterized queries and input validation.
+XSS	Steal user data or hijack browser sessions.	The End-user/Browser.	Sanitizing input using allowlists and encoding.
+
+Pro-Tip from the Field: Traditional filters often miss subtle attack patterns. Modern defense is shifting toward Hybrid CNN-LSTM models. These deep learning networks extract complex features and capture temporal dependencies in data, reaching over 99% accuracy in detecting even the most well-hidden SQLi and XSS payloads.
+
+6. Phase 4: Maintaining Access (Persistence)
+
+Getting inside is easy; staying there is the challenge. The goal of "Access Keeping" is to ensure that even if a system is rebooted or the original vulnerability is patched, the auditor can return.
+
+The Hacker’s Persistence To-Do List
+
+* [ ] Install Backdoors: Create hidden entry points for future, easier access.
+* [ ] Deploy Rootkits: Install specialized software to hide the presence of malicious files from the OS.
+* [ ] Hide Files: Alter file attributes to blend into the system's background noise.
+* [ ] "Patch" the Hole: Paradoxically, an attacker may fix the original flaw to ensure no other hackers can enter their newly conquered territory.
+
+7. Phase 5: Covering Tracks (Clearing the Evidence)
+
+The final task is to become a digital ghost—leaving no footprints. To avoid detection by Intrusion Detection Systems (IDS) or administrators, the hacker must remove all evidence of their presence.
+
+Critical actions include:
+
+* Disabling Auditing: Turning off the system's ability to record security events.
+* Manipulating Log Files: Removing or altering specific entries that show unauthorized logins.
+* Steganography: Hiding stolen data within innocent-looking files (like images) to smuggle it out.
+* Protocol Tunneling: Hiding restricted traffic within authorized protocols to bypass firewalls.
+
+The integrity of system logs is the first priority of an attacker. Once administrative privileges are gained, they will immediately attempt to erase or alter logs. If you cannot trust your logs, you cannot trust your security.
+
+8. From Attack to Defense: The Pentest Approach
+
+Professional auditors use these five phases to conduct a Pentest (Penetration Test). By simulating the mindset of an adversary, we provide a controlled audit of a client's defenses.
+
+Test Type	Knowledge Level	Simulated Attacker
+Black-Box	Zero Knowledge	Outside Attacker (unauthorized/external)
+Gray-Box	Partial Knowledge	Internal Agent (Insider/Employee)
+White-Box	Full Knowledge	System Administrator (Full internal view)
+
+9. Rules of Engagement: Ethics and Legality
+
+Your intent does not place you above the law. An ethical hacker is defined by their Rules of Engagement. Without these, you are simply a criminal with good excuses.
+
+The Ethical Hacker’s Code
+
+* Obtain written authorization first: Never touch a system without a signed legal contract.
+* Maintain strict confidentiality: Use NDAs to protect any sensitive data encountered.
+* Define and respect limits: Stay strictly within the agreed-upon scope (e.g., don't crash the server).
+* Follow the law: Be aware of the Lei Dieckmann (Brazil), which criminalizes the invasion of devices to obtain data, and the Cyber Security Enhancement Act (USA), which can carry life sentences for attacks that endanger lives.
+* Deliver a detailed report: Your value is not in the "hack," but in the documentation of vulnerabilities and the suggested repairs.
